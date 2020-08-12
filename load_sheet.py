@@ -9,7 +9,7 @@ from info import Info
 def load_excel():
     s = Info("Import excle")
     s.out_start()
-    wb = openpyxl.load_workbook('/Users/kiana/Documents/work/互联网维护端口核查总台账-0721未整改核查.xlsx')
+    wb = openpyxl.load_workbook('/Users/kiana/Desktop/1.xlsx')
     sheet = wb.active
     s.out_end()
     return sheet
@@ -41,6 +41,8 @@ def get_port_list(sheet):
 
 if __name__ == '__main__':
     sheet = load_excel()
-    get_ip_list(sheet)
-    get_port_list(sheet)
+    ip = get_ip_list(sheet)
+    port = get_port_list(sheet)
+    print(ip)
+    print(port)
 
